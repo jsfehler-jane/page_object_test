@@ -1,5 +1,5 @@
-import { Repeating } from '../../dist/repeating';
-import { Field, Button } from '../../dist/fields';
+import { Repeating } from 'oraoraora/repeating.js';
+import { Field, Button } from 'oraoraora/fields';
 
 import { browser } from '@wdio/globals';
 

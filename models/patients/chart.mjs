@@ -1,5 +1,5 @@
-import { Area } from '../../dist/area.js';
-import { Button, Field } from '../../dist/fields';
+import { Area } from 'oraoraora/area.js';
+import { Button, Field } from 'oraoraora/fields';
 
 export class Chart {
     constructor() {

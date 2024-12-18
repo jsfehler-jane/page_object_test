@@ -1,4 +1,4 @@
-import { Field } from '../../../dist/fields';
+import { Field } from 'oraoraora/fields';
 
 import { WeekView } from './week_view.mjs';
 

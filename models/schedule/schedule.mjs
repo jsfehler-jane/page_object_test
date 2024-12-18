@@ -1,6 +1,6 @@
-import { Page } from '../../dist/page';
-import { Area } from '../../dist/area';
-import { Button, Field, Input } from '../../dist/fields';
+import { Page } from 'oraoraora/page.js';
+import { Area } from 'oraoraora/area.js';
+import { Button, Field, Input } from 'oraoraora/fields';
 
 import { Calendar } from './calendar/calendar.mjs';
 import { StaffFilter } from './staff_filter.mjs';

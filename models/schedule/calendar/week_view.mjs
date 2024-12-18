@@ -1,6 +1,6 @@
-import { Area } from '../../../dist/area.js';
-import { Button, Field, Text } from '../../../dist/fields';
-import { Repeating } from '../../../dist/repeating.js';
+import { Area } from 'oraoraora/area.js';
+import { Button, Field, Text } from 'oraoraora/fields';
+import { Repeating } from 'oraoraora/repeating.js';
 
 import { browser } from '@wdio/globals';
 

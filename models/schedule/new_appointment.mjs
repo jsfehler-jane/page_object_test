@@ -1,6 +1,6 @@
-import { Area } from '../../dist/area';
-import { Button, Field, Input, Text } from '../../dist/fields';
-import { Repeating } from '../../dist/repeating';
+import { Area } from 'oraoraora/area.js';
+import { Button, Field, Input, Text } from 'oraoraora/fields';
+import { Repeating } from 'oraoraora/repeating.js';
 
 export class NewAppointment {
     constructor() {
