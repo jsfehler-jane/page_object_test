@@ -24,11 +24,10 @@ When(/^I go to the Patients section/, async () => {
   const schedulePage = new Schedule();
   await schedulePage.header.patients.click();
 
-  const patients = new Patients();
-
 });
 
 When(/^I select a patient/, async () => {
+  const patients = new Patients();
   const patient = await patients.patientList.getPatientByName('Emilie Chan');
 
   await patient.click();
