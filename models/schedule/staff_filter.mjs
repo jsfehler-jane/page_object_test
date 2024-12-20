@@ -32,28 +32,6 @@ export class StaffFilter {
 }
 
 class StaffMember extends Area {
-    clone() {
-        let newRoot;
-        if (this.root) {
-            newRoot = this.root.clone();
-        } else {
-            newRoot = null;
-        }
-
-        const newNodes = {};
-        for (const [name, value] of Object.entries(this._items)) {
-            newNodes[name] = value.clone();
-        }
-
-        const args = {
-            root: newRoot,
-            nodes: newNodes,
-        };
-        const newArea = new StaffMember(args);
-
-        return newArea;
-    }
-
     constructor() {
         const container = new Field('./a/parent::li');
 

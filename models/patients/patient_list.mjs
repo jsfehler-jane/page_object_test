@@ -16,6 +16,7 @@ export class PatientList {
 
     async getPatientByName(name) {
         const children = await this.patients.children();
+        // TODO: Remove hardcoded pause
         await browser.pause(5000);
         let found = null;
 

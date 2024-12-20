@@ -16,9 +16,7 @@
     "@wdio/cli": "^9.4.3",
     "@wdio/cucumber-framework": "^9.4.3",
     "@wdio/local-runner": "^9.4.3",
-    "@wdio/spec-reporter": "^9.4.3"
-  },
-  "dependencies": {
+    "@wdio/spec-reporter": "^9.4.3",
     "oraoraora": "file:oraoraora-0.0.1.tgz"
   }
 }
