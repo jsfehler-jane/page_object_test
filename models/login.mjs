@@ -1,7 +1,3 @@
-//import { Page } from '../dist/page.js';
-//import { Area } from '../dist/area.js';
-//import { Button, Input } from '../dist/fields';
-
 import { Page } from 'oraoraora/page.js';
 import { Area } from 'oraoraora/area.js';
 import { Button, Input } from 'oraoraora/fields';
