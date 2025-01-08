@@ -1,4 +1,4 @@
 package.json
 tsconfig.json
-wdio.conf.js
+wdio.conf.ts
 eslint.config.mjs
