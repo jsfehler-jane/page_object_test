@@ -1,4 +1,5 @@
 package.json
+package-lock.json
 tsconfig.json
 wdio.conf.ts
 eslint.config.mjs
