@@ -1,1 +1,1 @@
-export { Patients } from "./patients.mjs";
+export { Patients } from './patients.mjs';
