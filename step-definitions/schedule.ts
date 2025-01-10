@@ -30,7 +30,9 @@ When(/^I select a Treatment for a staff member/, async () => {
 });
 
 When(/^I select a free slot on the schedule/, async () => {
-    const slots = await schedulePage.calendar.weekView.thursday.getSchedule({
+    const staffMemberName = 'Susan Lo';
+
+    const slots = await schedulePage.calendar.weekView.friday.getSchedule({
         discipline: 'Massage Therapy',
         staff: staffMemberName,
     });
