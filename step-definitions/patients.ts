@@ -1,5 +1,7 @@
 import { When } from '@wdio/cucumber-framework';
 
+import { Schedule } from '../models/schedule';
+
 import { Patients } from '../models/patients';
 
 When(/^I go to the Patients section/, async () => {
