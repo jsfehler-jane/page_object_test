@@ -9,6 +9,6 @@ Given(/^I am logged in as an admin/, async () => {
     await loginPage.usernameForm.username.fill('owner');
     await loginPage.usernameForm.submit.click();
 
-    await loginPage.passwordForm.password.fill('regallemon');
+    await loginPage.passwordForm.password.fill('tastyshark');
     await loginPage.passwordForm.submit.click();
 });
