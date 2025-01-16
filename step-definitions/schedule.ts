@@ -2,8 +2,6 @@ import { When, Then } from '@wdio/cucumber-framework';
 
 import { Schedule } from '../models/schedule';
 
-import { expect, $ } from '@wdio/globals';
-
 const schedulePage = new Schedule();
 
 When(/^I select a Treatment for a staff member/, async () => {
@@ -25,8 +23,8 @@ When(/^I select a Treatment for a staff member/, async () => {
     const treatments = await staffMember.treatments.children();
     const treatment = await treatments.containing('title', '60 Minute Massage');
 
-    const treatment_0 = treatment[0];
-    await treatment_0.showAvailableTimes.click();
+    const sixtyMinuteMassage = treatment[0];
+    await sixtyMinuteMassage.showAvailableTimes.click();
 });
 
 When(/^I select a free slot on the schedule/, async () => {
@@ -66,7 +64,9 @@ When(/^I add a patient to the appointment slot/, async () => {
             await result.name.textContent();
             patient = result;
             break;
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     await patient.name.click();
