@@ -1,6 +1,8 @@
+import { strict as assert } from 'assert';
+
 import { When, Then } from '@wdio/cucumber-framework';
 
-import { Schedule } from '../models/schedule';
+import { Schedule, NewAppointment } from '../models/schedule';
 
 const schedulePage = new Schedule();
 
@@ -48,13 +50,14 @@ When(/^I select a free slot on the schedule/, async () => {
 });
 
 When(/^I add a patient to the appointment slot/, async () => {
-    const newAppointmentPage = new NewAppointment();
-    await newAppointmentPage.patient.addPatient.fill('Philippe Claire');
+    const newAppointmentPanel = new NewAppointment();
+
+    await newAppointmentPanel.patient.addPatient.fill('Philippe Claire');
 
     // Wait for network
     await browser.pause(5000);
 
-    const c = await newAppointmentPage.patient.patientSearchResults.children();
+    const c = await newAppointmentPanel.patient.patientSearchResults.children();
 
     let patient = null;
 
@@ -76,7 +79,9 @@ When(/^I add a patient to the appointment slot/, async () => {
 });
 
 Then(/^the patient is added to the appointment/, async () => {
-    const scheduledPatients = await newAppointmentPage.patient.scheduledPatients.children();
+    const newAppointmentPanel = new NewAppointment();
+
+    const scheduledPatients = await newAppointmentPanel.patient.scheduledPatients.children();
     const firstScheduledPatient = await scheduledPatients[0].name.textContent();
     assert.equal(firstScheduledPatient, 'Philippe Claire');
 });

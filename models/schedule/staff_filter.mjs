@@ -10,7 +10,7 @@ import { browser } from '@wdio/globals';
 export class StaffFilter {
     constructor() {
         this.staffMembers = new Repeating({
-            root: new Field('//div[@id="user-list"]/ul/li'),
+            root: new Field('#user-list > ul > li'),
             repeated: new StaffMember(),
         });
     }
@@ -48,9 +48,26 @@ class StaffMember extends Area {
 
         async function changeOpacity(field) {
             const elem = await field.find();
-            await browser.execute((a) => {
-                a.style.opacity = 100;
+
+            const result = await browser.execute((a) => {
+                if (!a.isConnected) {
+                    return false;
+                }
+                a.style.setProperty('background-color', '#FF0', 'important');
+                a.style.setProperty('z-index', '9999');
+                a.style.setProperty('opacity', '1');
+                a.style.setProperty('filter', 'none');
+                a.style.setProperty('transition', 'none');
+                a.style.setProperty('transition-property', 'none');
+                return true;
             }, elem.rawElem.parent);
+
+            if (!result) {
+                throw new Error('Element detached from page.');
+            }
+
+            await elem.rawElem.parent.moveTo();
+            await elem.rawElem.moveTo();
         }
 
         toolbar.toggleTreatments.before('click', changeOpacity);
