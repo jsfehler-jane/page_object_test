@@ -12,9 +12,10 @@ export class Schedule extends Page {
         this.urlSuffix = 'admin#schedule';
 
         this.header = new Area({
+            root: new Field('#app_nav_left'),
             nodes: {
-                schedule: new Button('//ul/li/a[@data-e2e-id="schedule-nav"]'),
-                patients: new Button('//ul/li/a[contains(@href, "/admin#patients")]'),
+                schedule: new Button('[data-e2e-id="schedule-nav"]'),
+                patients: new Button('./li/a[contains(@href, "/admin#patients")]'),
             },
         });
 
